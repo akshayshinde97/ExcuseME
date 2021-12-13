@@ -7,7 +7,20 @@ function randomstyle(){
     let indx = Math.floor(Math.random()*5);
     return indx;
 };
-
+window.onload = function () {
+    document.getElementById("download")
+        .addEventListener("click", () => {
+            const invoice = this.document.getElementById("card");
+            var opt = {
+                margin: 1,
+                filename: 'ExcuseMe.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(invoice).set(opt).save();
+        })
+}
 console.log(randomstyle());
 function createcardstyle(){
     let indx = randomstyle();
