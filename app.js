@@ -39,7 +39,7 @@ fetchexcuse();
 const shareData = {
     title: 'ExcuseMe',
     text: 'Never get short of Excuses.',
-    url: 'https://developer.mozilla.org'
+    url: 'https://akshayshinde97.github.io/ExcuseME.github.io/'
   }
 
   const btn = document.querySelector('#share');
