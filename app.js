@@ -36,3 +36,21 @@ function fetchexcuse(){
   
 }
 fetchexcuse();
+const shareData = {
+    title: 'ExcuseMe',
+    text: 'Never get short of Excuses.',
+    url: 'https://developer.mozilla.org'
+  }
+
+  const btn = document.querySelector('#share');
+  const resultPara = document.querySelector('#result');
+
+  // Share must be triggered by "user activation"
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.share(shareData)
+      resultPara.textContent = 'Shared successfully'
+    } catch(err) {
+      resultPara.textContent = 'Error: ' + err
+    }
+  });
